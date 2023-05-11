@@ -1,0 +1,54 @@
+
+    <div class="top-row ps-3 navbar navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href=""> <i class="fa fa-envira text-success me-2" aria-hidden="true"></i> </a>
+            <button title="Navigation menu" class="navbar-toggler" (click)="ToggleNavMenu()">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+    <div class="{{NavMenuCssClass}}" (click)="ToggleNavMenu()">
+        <nav class="flex-column">
+            <div class="nav-item px-3">
+                <a class="nav-link" routerLink='/welcome'>
+                    <span class="oi oi-home" aria-hidden="true"></span> Accueil
+                </a>
+            </div>
+            <div class="nav-item px-3">
+                <a class="nav-link" routerLink='/gammelist'>
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Gamme
+                </a>
+            </div>
+            <div class="nav-item px-3">
+                <a class="nav-link" routerLink='/categorylist'>
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Catégorie
+                </a>
+            </div>
+            <div class="nav-item px-3">
+                <a class="nav-link" routerLink='/unitlist'>
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Unité
+                </a>
+            </div>
+            <div class="nav-item px-3">
+                <a class="nav-link" routerLink='/productlist'>
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Produit
+                </a>
+            </div>
+            <div class="nav-item px-3">
+                <a class="nav-link" routerLink='/supplierlist'>
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Fournisseur
+                </a>
+            </div>
+            <div class="nav-item px-3">
+                <a class="nav-link" routerLink='/cutlist'>
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Coupe
+                </a>
+            </div>
+            <div class="nav-item px-3">
+                <a class="nav-link" routerLink='/varietylist'>
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Varietés
+                </a>
+            </div>
+        </nav>
+    </div>
+

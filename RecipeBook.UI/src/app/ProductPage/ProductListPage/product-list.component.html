@@ -1,0 +1,31 @@
+
+<div class="bg-dark">
+    <h3 class="my-3 text-white py-2"><i class="fa fa-chevron-circle-right mx-2" aria-hidden="true"></i> Liste des produits</h3>
+</div>
+<div class="mt-4">
+    <div class="form-row">
+        <div class="col-md-12">
+            <app-filter-list [normalList]="allproducts" (filtered)="onFilterList($event)"></app-filter-list>
+            <app-button-redirect [Addlink]="productedit"></app-button-redirect>
+        </div>
+    </div>
+</div>
+<table class="table table-hover mt-3 mb-3">
+    <thead>
+        <tr class="h5 fw-bold bg-dark text-white table-title">
+            <th class="col-7" scope="col">Nom</th>
+            <th class="col-3" scope="col">Unité</th>
+            <th class="col-2 text-end" scope="col">Edition</th>
+        </tr>
+    </thead>
+    <tbody *ngIf="allproducts.length">
+        <tr *ngFor="let product of filterProducts">
+            <td>{{product.name}}</td>
+            <td>{{product.unitName}}</td>
+            <td class="text-end">
+                <a [routerLink]="['/productedit',product.id]" class="btn btn-outline-dark rounded-circle border-0" title="Editer"><span class="oi oi-pencil"></span></a>
+                <button class="btn btn-outline-danger rounded-circle border-0" title="Supprimer"><span class="oi oi-trash"></span></button>
+            </td>
+        </tr>
+    </tbody>
+</table>
