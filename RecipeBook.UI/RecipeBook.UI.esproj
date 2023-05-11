@@ -11,6 +11,9 @@
     <BuildOutputFolder>$(MSBuildProjectDirectory)\dist\RecipeBook.UI</BuildOutputFolder>
   </PropertyGroup>
   <ItemGroup>
+    <Folder Include="src\app\AccountPage\" />
+    <Folder Include="src\app\AuthPage\" />
+    <Folder Include="src\app\IngredientPage\IngredientModule\" />
     <Folder Include="src\app\RecipePage\RecipeListPage\" />
     <Folder Include="src\app\RecipePage\RecipeModule\" />
   </ItemGroup>

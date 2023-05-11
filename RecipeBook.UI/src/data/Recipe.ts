@@ -1,5 +1,4 @@
-export class Recipe {
- 
+export class Recipe { 
   name: string = "";
   quantity: number = 0;
   comment: string = "";
@@ -11,6 +10,4 @@ export class Recipe {
   externalValidation: Date = new Date();
   productName: string | null = "";
   unitName: string = "";
-  
-  
 }

@@ -18,14 +18,19 @@ import { ToastrModule } from 'ngx-toastr';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { RecipeModule } from './RecipePage/RecipeModule/recipe.module';
 import { BaseService } from '../Service/BaseService';
-
+import { IngredientListComponent } from './IngredientPage/IngredientList/ingredient-list.component';
+import { IngredientDetailComponent } from './IngredientPage/IngredientDetail/ingredient-detail.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
     AppComponent,  
     WelcomeComponent,
     NavBarComponent,
-    MainLayoutComponent
+    MainLayoutComponent,
+    IngredientListComponent,
+    IngredientDetailComponent
    
   ],
   imports: [
@@ -56,6 +61,8 @@ import { BaseService } from '../Service/BaseService';
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
     }),
+    MatSlideToggleModule,
+    MatDialogModule
     
     
    
