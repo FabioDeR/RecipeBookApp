@@ -22,6 +22,7 @@ import { IngredientListComponent } from './IngredientPage/IngredientList/ingredi
 import { IngredientDetailComponent } from './IngredientPage/IngredientDetail/ingredient-detail.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatDialogModule } from '@angular/material/dialog';
+import { DialogEditComponent } from './Shared/DialogEdit/dialog-edit.component';
 
 @NgModule({
   declarations: [
@@ -30,8 +31,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     NavBarComponent,
     MainLayoutComponent,
     IngredientListComponent,
-    IngredientDetailComponent
-   
+    IngredientDetailComponent  
   ],
   imports: [
     BrowserModule,
@@ -61,8 +61,8 @@ import { MatDialogModule } from '@angular/material/dialog';
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
     }),
-    MatSlideToggleModule,
-    MatDialogModule
+    MatSlideToggleModule
+    
     
     
    
