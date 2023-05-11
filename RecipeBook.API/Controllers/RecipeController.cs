@@ -41,7 +41,7 @@ namespace RecipeBook.API.Controllers
 
         //GetById
         [HttpGet("{id}")]
-        public async Task<ActionResult<GammeVM>> GetRecipeDetail(Guid id)
+        public async Task<ActionResult<RecipeVM>> GetRecipeDetail(Guid id)
         {
             var getGammeDetailQuery = new GetRecipeDetailQuery() { Id = id };
 

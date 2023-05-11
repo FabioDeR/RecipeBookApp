@@ -1,0 +1,63 @@
+
+
+<div class="bg-dark">
+  <h3 class="my-3 text-white py-2"><i class="fa fa-chevron-circle-right mx-2" aria-hidden="true"></i>Ajouter une nouvelle recette </h3>
+</div>
+
+
+<div class="form-group col-md-6">
+  <app-button-back [Addlink]="recipelist"></app-button-back>
+  <form (ngSubmit)="HandleRecipe()">
+
+    <div class="form-group row my-3">
+      <label for="inputName" class="col-sm-2 col-form-label">Nom</label>
+      <div class="col-sm-10 mb-3">
+        <input name="Name" placeholder="Soupe de Carotte" class="form-control" id="inputName" [(ngModel)]="recipe.name" />
+      </div>
+
+      <label for="inputProduct" class="col-sm-2 col-form-label">Produit</label>
+      <div class="col-sm-10 mb-3">
+        <select name="productId" id="inputProduct" class="form-control" [(ngModel)]="recipe.productId" >
+          <option>--Select--</option>
+          <option [ngValue]="product.id" *ngFor="let product of allproducts">{{product.name}}</option>
+        </select>
+      </div>
+
+      <label for="inputCulture" class="col-sm-2 col-form-label">Culture</label>
+      <div class="col-sm-10 mb-3">
+        <select name="cultureId" id="inputCulture" class="form-control" [(ngModel)]="recipe.cultureId" >
+          <option>--Select--</option>
+          <option [ngValue]="culture.id" *ngFor="let culture of allcultures">{{culture.name}}</option>
+        </select>
+      </div>
+
+      <label for="inputCut" class="col-sm-2 col-form-label">Coupe</label>
+      <div class="col-sm-10 mb-3">
+        <select name="cutId" id="inputCut" class="form-control" [(ngModel)]="recipe.cutId" >
+          <option>--Select--</option>
+          <option [ngValue]="cut.id" *ngFor="let cut of allcuts">{{cut.name}}</option>
+        </select>
+
+      </div>
+
+      <label for="inputUnit" class="col-sm-2 col-form-label">Unité</label>
+      <div class="col-sm-10 mb-3">
+        <select name="unitId" id="inputUnit" class="form-control" [(ngModel)]="recipe.unitId">
+          <option>--Select--</option>
+          <option [ngValue]="unit.id" *ngFor="let unit of allunits">{{unit.name}}</option>
+        </select>
+      </div>
+
+      <label for="inputQuantity" class="col-sm-2 col-form-label">Quantité</label>
+      <div class="col-sm-10 mb-3">
+        <div class="row g-3">
+          <div class="col-4">
+            <input name="quantity" type="number" disabled placeholder="10"  class="form-control" id="inputquantity" value="10" [(ngModel)]="recipe.quantity"  />
+          </div>
+        </div>
+      </div>      
+    </div>
+    <app-button-post></app-button-post>
+  </form>
+</div>
+

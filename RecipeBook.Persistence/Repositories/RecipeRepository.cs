@@ -10,17 +10,18 @@ namespace RecipeBook.Persitence.Repositories
         public RecipeRepository(RecipeBookDbContext dbContext) : base(dbContext)
         {
         }
-        
+
         public async Task<List<RecipeVM>> GetListRecipeBook()
         {
             return await _dbContext.Recipes
                          .Include(p => p.Product)
                          .ThenInclude(p => p.Unit).Select(p => new RecipeVM()
-                         { 
-                                          Name = p.Name,
-                                          ProductName = p.Product.Name,
-                                          UnitName = p.Unit.Name,
-                                          Quantity = p.Quantity,
+                         {
+                             Id = p.Id,
+                             Name = p.Name,
+                             ProductName = p.Product.Name,
+                             UnitName = p.Unit.Name,
+                             Quantity = p.Quantity,
 
                          }).ToListAsync();
         }

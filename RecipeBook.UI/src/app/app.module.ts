@@ -1,6 +1,5 @@
 import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MainLayoutComponent } from './Shared/MainLayout/main-layout.component';
@@ -17,13 +16,17 @@ import { CutModule } from './CutPage/CutModule/cut.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { RecipeModule } from './RecipePage/RecipeModule/recipe.module';
+import { BaseService } from '../Service/BaseService';
+
 
 @NgModule({
   declarations: [
     AppComponent,  
     WelcomeComponent,
     NavBarComponent,
-    MainLayoutComponent, 
+    MainLayoutComponent
+   
   ],
   imports: [
     BrowserModule,
@@ -39,10 +42,12 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     ProductModule,
     SupplierModule,
     VarietyModule,
+    RecipeModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       timeOut: 3500,
-      positionClass: 'toast-bottom-center',
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true
     }),
     CutModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
@@ -50,10 +55,14 @@ import { ServiceWorkerModule } from '@angular/service-worker';
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
-    })
+    }),
+    
+    
+   
+
    
   ],
-  providers: [],
+  providers: [BaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

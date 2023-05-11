@@ -16,7 +16,7 @@ namespace RecipeBook.API
             builder.Services.AddApplicationServices();            
             builder.Services.AddPersistenceServices(builder.Configuration);
             builder.Services.AddIdentityServices(builder.Configuration);
-            builder.Services.AddScoped<ILoggedInUserService, LoggedInUserService>();
+            //builder.Services.AddScoped<ILoggedInUserService, LoggedInUserService>();
             builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             builder.Services.AddHttpContextAccessor();

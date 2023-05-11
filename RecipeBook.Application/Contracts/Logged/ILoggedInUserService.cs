@@ -8,6 +8,6 @@ namespace RecipeBook.Application.Contracts.Logged
 {
     public interface ILoggedInUserService
     {
-        public string UserId { get; }
+        //public string UserId { get; }
     }
 }

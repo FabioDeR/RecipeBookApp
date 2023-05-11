@@ -13,11 +13,11 @@ namespace RecipeBook.Persitence
 {
     public class RecipeBookDbContext : DbContext
     {
-        private readonly ILoggedInUserService _loggedInUserService;
+        //private readonly ILoggedInUserService _loggedInUserService;
 
-        public RecipeBookDbContext(DbContextOptions<RecipeBookDbContext> options, ILoggedInUserService loggedInUserService) : base(options)
+        public RecipeBookDbContext(DbContextOptions<RecipeBookDbContext> options/*ILoggedInUserService loggedInUserService*/) : base(options)
         {
-            _loggedInUserService = loggedInUserService;
+            //_loggedInUserService = loggedInUserService;
         }
 
         public DbSet<Category> Categories { get; set; }
@@ -51,15 +51,15 @@ namespace RecipeBook.Persitence
                 {
                     case EntityState.Added:
                         entry.Entity.CreationDate = DateTime.Now;
-                        entry.Entity.CreationTrackingUserId = Guid.Parse(_loggedInUserService.UserId);
+                        entry.Entity.CreationTrackingUserId = Guid.Parse("6d6e284c-1278-4b9d-ba98-1d37bc941617");
                         break;
                     case EntityState.Modified:
                         entry.Entity.UpdateDate = DateTime.Now;
-                        entry.Entity.UpdateTrackingUserId = Guid.Parse(_loggedInUserService.UserId);
+                        entry.Entity.UpdateTrackingUserId = Guid.Parse("6d6e284c-1278-4b9d-ba98-1d37bc941617");
                         break;
                     case EntityState.Deleted:
                         entry.Entity.DeleteDate = DateTime.Now;
-                        entry.Entity.DeleteTrackingUserId = Guid.Parse(_loggedInUserService.UserId);
+                        entry.Entity.DeleteTrackingUserId = Guid.Parse("6d6e284c-1278-4b9d-ba98-1d37bc941617");
                         break;
                 }
             }

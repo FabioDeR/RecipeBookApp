@@ -8,6 +8,7 @@ namespace RecipeBook.Application.Features.Recipes.Queries.CommonVM
 {
     public class RecipeVM
     {
+        public Guid Id { get; set; }
         public string Name { get; set; } = string.Empty;
 
         public string ProductName { get; set; } = string.Empty;
@@ -15,7 +16,5 @@ namespace RecipeBook.Application.Features.Recipes.Queries.CommonVM
         public string UnitName { get; set; } = string.Empty;
 
         public float Quantity { get; set; }
-
-
     }
 }

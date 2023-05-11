@@ -20,9 +20,7 @@ import { CategoryListComponent } from "../CategoryListPage/category-list.compone
       { path: 'categoryedit', component: CategoryDetailComponent },
       { path: 'categoryedit/:id', component: CategoryDetailComponent }
     ]),
-    SharedModule,
-    
-    
+    SharedModule,   
   ]
 })
 
