@@ -1,4 +1,5 @@
-export class Recipe { 
+export class Recipe {
+  id: string = "";
   name: string = "";
   quantity: number = 0;
   comment: string = "";

@@ -17,7 +17,7 @@ namespace RecipeBook.Application.Features.Ingredients.Command.CreateIngredient
                 .GreaterThan(0)
                 .WithMessage("{PropertyName} must be greater than 0");
 
-            RuleFor(e => e.RecipeBookId)
+            RuleFor(e => e.RecipeId)
                .NotNull()
                .NotEmpty()
                .WithMessage("{PropertyName} is required");

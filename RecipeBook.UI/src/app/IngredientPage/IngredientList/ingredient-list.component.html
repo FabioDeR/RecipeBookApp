@@ -1,1 +1,30 @@
-<p>ingredient-list works!</p>
+<div class="bg-dark">
+  <h3 class="my-3 text-white py-2"><i class="fa fa-chevron-circle-right mx-2" aria-hidden="true"></i> Gérer les ingrédients de {{recipeName}}</h3>
+</div>
+
+<table class="table table-hover mt-3 mb-3">
+  <thead>
+    <tr class="h5 fw-bold bg-dark text-white table-title">
+      <th class="col-3" scope="col">Produit</th>
+      <th class="col-2" scope="col">Quantité </th>      
+      <th class="col-3" scope="col">Variété </th>
+      <th class="col-2 text-end" scope="col">Edition</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="(allingredient?.length || allingredient == null)">   
+    <tr *ngFor="let ingredient of allingredient">
+      <td>{{ingredient.productName}}</td>      
+      <td>{{ingredient.quantity}} {{ingredient.unitName}}</td>
+      <td>{{ingredient.varietyName}}</td>
+      <td class="text-end">
+        <a class="btn btn-outline-dark rounded-circle border-0" title="Editer"><span class="oi oi-pencil"></span></a>
+        <button class="btn btn-outline-danger rounded-circle border-0" title="Supprimer"><span class="oi oi-trash"></span></button>
+      </td>
+    </tr>   
+  </tbody>
+</table>
+
+<a class="btn btn-outline-dark float-start rounded-circle border-0" (click)="openDialog()">
+  <i class="fa fa-plus pt-1 fs-5" aria-hidden="true"></i>
+</a>
+

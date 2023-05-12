@@ -1,1 +1,33 @@
-<p>ingredient-detail works!</p>
+<h1 mat-dialog-title>Ajouter Un Ingredient</h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Selectionnez le Product</mat-label>
+    <mat-select name="productId" id="inputProduct" [(ngModel)]="ingredient.productId">
+      <mat-option>--Select--</mat-option>
+      <mat-option [value]="product.id" *ngFor="let product of allproducts">{{product.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Selectionnez la Varieté</mat-label>
+    <mat-select name="varietyId" id="inputvariety" [(ngModel)]="ingredient.varietyId">
+      <mat-option>--Select--</mat-option>
+      <mat-option [value]="variety.id" *ngFor="let variety of allvarieties">{{variety.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Selectionnez l'Unité'</mat-label>
+    <mat-select name="unitId" id="inputUnit"  [(ngModel)]="ingredient.unitId">
+      <mat-option>--Select--</mat-option>
+      <mat-option [value]="unit.id" *ngFor="let unit of allunits">{{unit.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Quantité</mat-label>
+    <input matInput [(ngModel)]="ingredient.quantity">
+  </mat-form-field>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Quitter</button>
+    <button mat-button (click)="SubmitIngredient()">Ok</button>
+  </div>
+</div>
+

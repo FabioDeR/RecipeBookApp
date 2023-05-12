@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using RecipeBook.Application.Features.Gammes.Queries.CommonVM;
+using RecipeBook.Application.Features.Gammes.Queries.GammeDetail;
 using RecipeBook.Application.Features.RecipeBooks.Commands.UpdateRecipe;
 using RecipeBook.Application.Features.Recipes.Commands.CreateRecipe;
 using RecipeBook.Application.Features.Recipes.Commands.DeleteRecipe;
@@ -43,9 +44,9 @@ namespace RecipeBook.API.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<RecipeVM>> GetRecipeDetail(Guid id)
         {
-            var getGammeDetailQuery = new GetRecipeDetailQuery() { Id = id };
-
-            return Ok(await _mediator.Send(getGammeDetailQuery));
+            var getRecipeDetailQuery = new GetRecipeDetailQuery() { Id = id };
+            var result = await _mediator.Send(getRecipeDetailQuery);
+            return Ok(result);
         }
 
         //Update

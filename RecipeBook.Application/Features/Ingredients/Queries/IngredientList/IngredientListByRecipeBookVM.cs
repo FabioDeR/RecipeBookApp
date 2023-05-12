@@ -9,6 +9,7 @@ namespace RecipeBook.Application.Features.Ingredients.Queries.IngredientList
 {
     public class IngredientListByRecipeBookVM
     {
+        public Guid Id { get; set; }    
         public float Quantity { get; set; }       
         public string ProductName { get; set; } = string.Empty;
         public string VarietyName { get; set; } = string.Empty;     

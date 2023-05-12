@@ -10,6 +10,6 @@ namespace RecipeBook.Application.Features.Ingredients.Queries.IngredientList
 {
     public class GetIngredientListByRecipeBookQuery : IRequest<List<IngredientListByRecipeBookVM>>
     {
-        public Guid RecipeBookId { get; set; }
+        public Guid RecipeId { get; set; }
     }
 }

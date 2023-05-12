@@ -6,10 +6,6 @@ import { BaseService } from "./BaseService";
 import { IGammeService } from "./Contract/IGammeService";
 
 
-
-
-
-
 @Injectable({
   providedIn: "root"
 })

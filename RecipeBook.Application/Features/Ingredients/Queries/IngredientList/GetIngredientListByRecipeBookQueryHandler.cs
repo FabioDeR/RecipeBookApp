@@ -19,7 +19,7 @@ namespace RecipeBook.Application.Features.Ingredients.Queries.IngredientList
 
         public async Task<List<IngredientListByRecipeBookVM>> Handle(GetIngredientListByRecipeBookQuery request, CancellationToken cancellationToken)
         {
-            return await _ingredientRepository.GetIngredientListByRecipeBook(request.RecipeBookId);
+            return await _ingredientRepository.GetIngredientListByRecipeBook(request.RecipeId);
         }
     }
 }

@@ -19,6 +19,7 @@ using RecipeBook.Application.Features.Ingredients.Queries.IngredientDetail;
 using RecipeBook.Application.Features.Products.Commands.CreateProduct;
 using RecipeBook.Application.Features.Products.Commands.UpdateProduct;
 using RecipeBook.Application.Features.Recipes.Commands.CreateRecipe;
+using RecipeBook.Application.Features.Recipes.Queries.CommonVM;
 using RecipeBook.Application.Features.Suppliers.Commands.CreateSupplier;
 using RecipeBook.Application.Features.Suppliers.Commands.UpdateSupplier;
 using RecipeBook.Application.Features.Suppliers.Queries.SupplierDetail;
@@ -92,6 +93,12 @@ namespace RecipeBook.Application.Profiles
             //RecipeBook
             CreateMap<Recipe, RecipeDto>().ReverseMap();
             CreateMap<Recipe, CreateRecipeCommand>();
+            CreateMap<Recipe, RecipeVM>()
+                    .ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.Product.Name))
+                    .ForMember(dest => dest.CultureName, opt => opt.MapFrom(src => src.Culture.Name))
+                    .ForMember(dest => dest.Quantity, opt => opt.MapFrom(src => src.Quantity))
+                    .ForMember(dest => dest.UnitName, opt => opt.MapFrom(src => src.Unit.Name))
+                    .ReverseMap();
 
             //Ingredient
             CreateMap<Ingredient, CreateIngredientCommand>().ReverseMap();

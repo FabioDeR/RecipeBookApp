@@ -14,8 +14,7 @@
       <tr class="h5 fw-bold bg-dark text-white table-title">
         <th class="col-2" scope="col">Nom </th>
         <th class="col-1" scope="col">Quantité </th>
-        <th class="col-2" scope="col">Produit </th>
-       
+        <th class="col-2" scope="col">Produit </th>       
         <th class="col-2" scope="col">Ingrédients </th>
         <th class="col-1 text-end" scope="col">Edition</th>
       </tr>
@@ -25,7 +24,7 @@
             <td>{{recipe.name}}</td>
             <td>{{recipe.quantity}} {{recipe.unitName}}</td>
             <td>{{recipe.productName}}</td>
-            <td><a class="btn btn-outline-dark rounded-circle border-0" title="Editer"><i class="fa fa-list-ul" aria-hidden="true"></i></a></td>
+            <td><a class="btn btn-outline-dark rounded-circle border-0" title="Editer" [routerLink]="['/ingredientlist',recipe.id]"><i class="fa fa-list-ul" aria-hidden="true"></i></a></td>
             <td class="text-end">
                 <a [routerLink]="['/recipeedit',recipe.name]" class="btn btn-outline-dark rounded-circle border-0" title="Editer"><span class="oi oi-pencil"></span></a>
                 <button class="btn btn-outline-danger rounded-circle border-0" title="Supprimer"><span class="oi oi-trash"></span></button>

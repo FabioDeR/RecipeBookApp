@@ -23,15 +23,16 @@ import { IngredientDetailComponent } from './IngredientPage/IngredientDetail/ing
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogEditComponent } from './Shared/DialogEdit/dialog-edit.component';
+import { IngredientModule } from './IngredientPage/IngredientModule/ingredient.module';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
     AppComponent,  
     WelcomeComponent,
     NavBarComponent,
-    MainLayoutComponent,
-    IngredientListComponent,
-    IngredientDetailComponent  
+    MainLayoutComponent 
   ],
   imports: [
     BrowserModule,
@@ -61,12 +62,8 @@ import { DialogEditComponent } from './Shared/DialogEdit/dialog-edit.component';
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
     }),
-    MatSlideToggleModule
-    
-    
-    
-   
-
+    MatSlideToggleModule,
+    IngredientModule
    
   ],
   providers: [BaseService],

@@ -18,14 +18,15 @@ namespace RecipeBook.Persitence.Repositories
         {
         }
 
-        public async Task<List<IngredientListByRecipeBookVM>> GetIngredientListByRecipeBook(Guid recipeBookId)
+        public async Task<List<IngredientListByRecipeBookVM>> GetIngredientListByRecipeBook(Guid recipeId)
         {
-            return await _dbContext.Ingredients.Where(r => r.RecipeId == recipeBookId)
+            return await _dbContext.Ingredients.Where(r => r.RecipeId == recipeId)
                                                .Include(p => p.Product)
                                                .Include(v => v.Unit)
                                                .Include(x => x.Variety)
                                                .Select(x => new IngredientListByRecipeBookVM()
                                                {
+                                                   Id = x.Id,
                                                    ProductName = x.Product.Name,
                                                    UnitName = x.Unit.Name,
                                                    Quantity = x.Quantity,
@@ -48,6 +49,7 @@ namespace RecipeBook.Persitence.Repositories
                                      on ing.VarietyId equals variety.Id
                                      select new Ingredient()
                                      {
+                                         Id = ing.Id,
                                          VarietyId = ing.VarietyId,
                                          Product = new Product
                                          {

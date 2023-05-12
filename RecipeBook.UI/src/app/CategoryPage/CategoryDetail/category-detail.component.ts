@@ -52,9 +52,7 @@ export class CategoryDetailComponent implements OnInit {
     } else {
       this.categoryservice.Update(this.category);
       this.toast.success("Item a bien été Modifié","Sucess");
-    }
-    
-    
+    }   
   }
 
   

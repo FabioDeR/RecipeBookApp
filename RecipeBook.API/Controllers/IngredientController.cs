@@ -28,10 +28,10 @@ namespace RecipeBook.API.Controllers
 
 
         //Get
-        [HttpGet]
-        public async Task<ActionResult<List<IngredientListByRecipeBookVM>>> GetIngredientListByRecipeBook()
+        [HttpGet("ingrendientlistbyrecipebookid/{id}")]
+        public async Task<ActionResult<List<IngredientListByRecipeBookVM>>> GetIngredientListByRecipeBook(Guid id)
         {
-            var articleList = await _mediator.Send(new GetIngredientListByRecipeBookQuery());
+            var articleList = await _mediator.Send(new GetIngredientListByRecipeBookQuery() { RecipeId = id});
             return Ok(articleList);
         }
 

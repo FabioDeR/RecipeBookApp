@@ -13,29 +13,30 @@ export class BaseService<T, Y> implements IBaseService<T, Y> {
 
   protected URL: string = "https://localhost:7091/api"
   protected name: string = "";
+  protected _http: HttpClient;
 
 
-  constructor(private http: HttpClient, private toast: ToastrService) {
-
+  constructor(http: HttpClient) {
+    this._http = http
   }
 
   GetAll(): Observable<T[]> {
-    return this.http.get<T[]>(`${this.URL}/${this.name}`);
+    return this._http.get<T[]>(`${this.URL}/${this.name}`);
   }
-  GetDetail(id: string): Observable<T> {
-    return this.http.get<T>(`${this.URL}/${this.name}/${id}`);
+  GetDetail(id: string): Observable<T> {    
+    return this._http.get<T>(`${this.URL}/${this.name}/${id}`);
   }
   Create(newObject: T): Observable<Y> {
-    return this.http.post<Y>(`${this.URL}/${this.name}`, newObject)
+    return this._http.post<Y>(`${this.URL}/${this.name}`, newObject)
   }
   Update(updateObject: T): void {
-    this.http.put(`${this.URL}/${this.name}`, updateObject)
+    this._http.put(`${this.URL}/${this.name}`, updateObject)
       .subscribe({ error: err => console.log(err) });
   }
 
 
   Delete(id: string): Observable<object> {
-    return this.http.delete(`${this.URL}/${this.name}/${id}`);      
+    return this._http.delete(`${this.URL}/${this.name}/${id}`);      
   }
 
 }

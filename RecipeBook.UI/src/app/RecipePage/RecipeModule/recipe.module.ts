@@ -7,8 +7,6 @@ import { SharedModule } from "../../Shared/SharedModule/shared.module";
 import { RecipeEditComponent } from "../RecipeDetailPage/recipe-edit.component";
 import { BrowserModule } from "@angular/platform-browser";
 
-
-
 @NgModule({
   declarations: [
     RecipeListComponent,
@@ -24,9 +22,8 @@ import { BrowserModule } from "@angular/platform-browser";
       { path: 'recipeedit', component: RecipeEditComponent },
       { path: 'recipeedit/:id', component: RecipeEditComponent }
     ]),
-    SharedModule
-  ]
-  
+    SharedModule,    
+  ]  
   })
 
 
